@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --scrollbar-bg: #e5e7eb; /* Cor de fundo do track */
+    --scrollbar-thumb: #9ca3af; /* Cor do thumb */
+    --scrollbar-thumb-hover: #6b7280; /* Cor do thumb no hover */
+  }
+
+  /* Estiliza a barra de rolagem para navegadores WebKit (Chrome, Safari, etc.) */
+  ::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+    height: 8px; /* Altura da barra de rolagem */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg); /* Fundo do track */
+    border-radius: var(--radius); /* Bordas arredondadas */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb); /* Cor do thumb */
+    border-radius: var(--radius); /* Bordas arredondadas */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover); /* Cor ao passar o mouse */
+  }
+
+  /* Para navegadores como Firefox */
+  * {
+    scrollbar-width: thin; /* Barra de rolagem fina */
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg); /* Cores thumb/track */
+  }
+}
